@@ -32,7 +32,6 @@ def tdStats():
             continue
 
     for player in tdList:
-        rank = 0
         print player['name'] + '  '\
         + player['position'] + '  '\
         + player['team'] + '  '\
