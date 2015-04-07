@@ -24,12 +24,12 @@ def stockPrices():
             cells = row.find_all('td')
             date = cells[0].get_text()
             close = cells[4].get_text()
-            stockData.append({date: close})
-            # chose a list with dicts so it's more easily 
-            # searchable by date
+            stockData.append({'date': date, 'close': close})
         except:
-            print "bad cell"
             continue
-    print stockData[1:]
+
+    for line in stockData[1:]:
+        print line['date'] + '  '\
+        + line['close']
 
 stockPrices()

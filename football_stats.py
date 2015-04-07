@@ -21,10 +21,21 @@ def tdStats():
             position = cells[1].get_text()
             team = cells[2].get_text()
             numTD = cells[6].get_text()
-            tdList.append([name, position, team, numTD])
+            tdList.append({
+                'name': name,
+                'position': position,
+                'team': team,
+                'numTD': numTD
+                })
         except:
             print "bad cell"
             continue
-    print tdList
+
+    for player in tdList:
+        rank = 0
+        print player['name'] + '  '\
+        + player['position'] + '  '\
+        + player['team'] + '  '\
+        + player['numTD']
 
 tdStats()
